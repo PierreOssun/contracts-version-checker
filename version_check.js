@@ -42,8 +42,8 @@ async function checkNetworkVersion(networkName, contractsFile) {
 
 async function checkVersions() {
   try {
-    const osakiVersion = await checkNetworkVersion('Osaki', 'OsakiL1contracts.json');
-    const minatoVersion = await checkNetworkVersion('Minato', 'mintanoL1contracts.json');
+    const osakiVersion = await checkNetworkVersion('Osaki', 'L1ContractsAddress/OsakiL1contracts.json');
+    const minatoVersion = await checkNetworkVersion('Minato', 'L1ContractsAddress/minatoL1contracts.json');
 
     const result = {
       timestamp: new Date().toISOString(),
