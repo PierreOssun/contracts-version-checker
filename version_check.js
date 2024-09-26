@@ -53,8 +53,6 @@ async function checkNetworkVersion(networkName, contractsFile, networkType) {
 
 async function checkVersions() {
   const networks = [
-    { name: 'Osaki', file: path.join('L1ContractsAddress', 'eth', 'OsakiL1contracts.json'), type: 'eth' },
-    { name: 'Minato', file: path.join('L1ContractsAddress', 'eth', 'MinatoL1contracts.json'), type: 'eth' },
     { name: 'BaseMainnet', file: path.join('L1ContractsAddress', 'eth', 'BaseMainnet.json'), type: 'eth' },
     { name: 'OpMainnet', file: path.join('L1ContractsAddress', 'eth', 'OpMainnet.json'), type: 'eth' },
     { name: 'OsakiSepolia', file: path.join('L1ContractsAddress', 'sep', 'OsakiL1contracts.json'), type: 'sep' },
