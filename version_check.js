@@ -52,7 +52,7 @@ async function checkNetworkVersion(networkName, contractsFile) {
 
 async function checkVersions() {
   const osakiFile = path.join('L1ContractsAddress', 'OsakiL1contracts.json');
-  const minatoFile = path.join('L1ContractsAddress', 'minatoL1contracts.json');
+  const minatoFile = path.join('L1ContractsAddress', 'MinatoL1contracts.json');
 
   const osakiVersion = await checkNetworkVersion('Osaki', osakiFile);
   const minatoVersion = await checkNetworkVersion('Minato', minatoFile);
