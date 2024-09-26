@@ -1,7 +1,6 @@
 const fs = require('fs');
 const { ethers } = require('ethers');
 const dotenv = require('dotenv');
-const fs = require('fs');
 
 // Load environment variables
 dotenv.config();
