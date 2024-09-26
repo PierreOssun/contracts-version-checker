@@ -10,17 +10,17 @@ function fileExists(filePath) {
   return fs.existsSync(filePath);
 }
 
-async function checkNetworkVersion(networkName, contractsFile) {
+async function checkNetworkVersion(networkName, contractsFile, networkType) {
   if (!fileExists(contractsFile)) {
     console.error(`Error: ${contractsFile} does not exist.`);
     return null;
   }
 
   try {
-    // Get RPC URL from .env file
-    const rpcUrl = process.env.ETH_RPC_URL;
+    // Get RPC URL from .env file based on network type
+    const rpcUrl = networkType === 'eth' ? process.env.ETHEREUM_RPC_URL : process.env.SEPOLIA_RPC_URL;
     if (!rpcUrl) {
-      throw new Error('ETH_RPC_URL is not set in the .env file');
+      throw new Error(`${networkType === 'eth' ? 'ETHEREUM_RPC_URL' : 'SEPOLIA_RPC_URL'} is not set in the .env file`);
     }
 
     const provider = new ethers.JsonRpcProvider(rpcUrl);
@@ -42,7 +42,8 @@ async function checkNetworkVersion(networkName, contractsFile) {
 
     return {
       SystemConfigProxy: systemConfigProxyAddress,
-      version: version
+      version: version,
+      networkType: networkType === 'eth' ? 'ethereum' : 'sepolia'
     };
   } catch (error) {
     console.error(`Error checking ${networkName} version:`, error.message);
@@ -51,19 +52,26 @@ async function checkNetworkVersion(networkName, contractsFile) {
 }
 
 async function checkVersions() {
-  const osakiFile = path.join('L1ContractsAddress', 'OsakiL1contracts.json');
-  const minatoFile = path.join('L1ContractsAddress', 'MinatoL1contracts.json');
-
-  const osakiVersion = await checkNetworkVersion('Osaki', osakiFile);
-  const minatoVersion = await checkNetworkVersion('Minato', minatoFile);
+  const networks = [
+    { name: 'Osaki', file: path.join('L1ContractsAddress', 'eth', 'OsakiL1contracts.json'), type: 'eth' },
+    { name: 'Minato', file: path.join('L1ContractsAddress', 'eth', 'MinatoL1contracts.json'), type: 'eth' },
+    { name: 'BaseMainnet', file: path.join('L1ContractsAddress', 'eth', 'BaseMainnet.json'), type: 'eth' },
+    { name: 'OpMainnet', file: path.join('L1ContractsAddress', 'eth', 'OpMainnet.json'), type: 'eth' },
+    { name: 'OsakiSepolia', file: path.join('L1ContractsAddress', 'sep', 'OsakiL1contracts.json'), type: 'sep' },
+    { name: 'MinatoSepolia', file: path.join('L1ContractsAddress', 'sep', 'MinatoL1contracts.json'), type: 'sep' },
+    { name: 'BaseSepolia', file: path.join('L1ContractsAddress', 'sep', 'BaseSepolia.json'), type: 'sep' },
+    { name: 'OpSepolia', file: path.join('L1ContractsAddress', 'sep', 'OPSepolia.json'), type: 'sep' },
+  ];
 
   const result = {
     timestamp: new Date().toISOString(),
-    networks: {
-      Osaki: osakiVersion,
-      Minato: minatoVersion
-    }
+    networks: {}
   };
+
+  for (const network of networks) {
+    const version = await checkNetworkVersion(network.name, network.file, network.type);
+    result.networks[network.name] = version;
+  }
 
   // Create filename with timestamp
   const timestamp = new Date().toISOString().replace(/:/g, '-').replace(/\..+/, '');
@@ -74,15 +82,14 @@ async function checkVersions() {
 
   console.log(`Version information saved to ${filename}`);
 
-  if (!osakiVersion && !minatoVersion) {
+  const successfulNetworks = Object.values(result.networks).filter(v => v !== null);
+  if (successfulNetworks.length === 0) {
     console.error('Error: Unable to retrieve version information for any network.');
   } else {
-    if (!osakiVersion) {
-      console.error('Warning: Unable to retrieve version information for Osaki network.');
-    }
-    if (!minatoVersion) {
-      console.error('Warning: Unable to retrieve version information for Minato network.');
-    }
+    const failedNetworks = networks.filter(n => result.networks[n.name] === null);
+    failedNetworks.forEach(n => {
+      console.error(`Warning: Unable to retrieve version information for ${n.name} network.`);
+    });
   }
 }
 
