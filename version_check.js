@@ -54,6 +54,25 @@ async function checkNetworkVersions(networkName, contractsFile, networkType) {
   }
 }
 
+function reorganizeData(networks) {
+  const contracts = {};
+
+  for (const [networkName, networkData] of Object.entries(networks)) {
+    for (const [contractName, contractInfo] of Object.entries(networkData.contracts)) {
+      if (!contracts[contractName]) {
+        contracts[contractName] = {};
+      }
+      contracts[contractName][networkName] = {
+        network: networkData.networkType,
+        version: contractInfo.version,
+        address: contractInfo.address
+      };
+    }
+  }
+
+  return contracts;
+}
+
 async function checkAllVersions() {
   const networks = [
     { name: 'BaseMainnet', file: path.join('L1ContractsAddress', 'eth', 'BaseMainnet.json'), type: 'eth' },
@@ -64,29 +83,30 @@ async function checkAllVersions() {
     { name: 'OpSepolia', file: path.join('L1ContractsAddress', 'sep', 'OPSepolia.json'), type: 'sep' },
   ];
 
-  const result = {
-    timestamp: new Date().toISOString(),
-    networks: {}
-  };
+  const networksResult = {};
 
   for (const network of networks) {
     const networkResult = await checkNetworkVersions(network.name, network.file, network.type);
     if (networkResult) {
-      result.networks[network.name] = networkResult;
+      networksResult[network.name] = networkResult;
     }
   }
 
+  const result = {
+    timestamp: new Date().toISOString(),
+    contracts: reorganizeData(networksResult)
+  };
+
   const timestamp = new Date().toISOString().replace(/:/g, '-').replace(/\..+/, '');
-  const filename = `network_versions_${timestamp}.json`;
+  const filename = `contract_versions_${timestamp}.json`;
 
   fs.writeFileSync(filename, JSON.stringify(result, null, 2));
   console.log(`Version information saved to ${filename}`);
 
-  const successfulNetworks = Object.values(result.networks).filter(v => v !== null);
-  if (successfulNetworks.length === 0) {
+  if (Object.keys(networksResult).length === 0) {
     console.error('Error: Unable to retrieve version information for any network.');
   } else {
-    const failedNetworks = networks.filter(n => !result.networks[n.name]);
+    const failedNetworks = networks.filter(n => !networksResult[n.name]);
     failedNetworks.forEach(n => {
       console.error(`Warning: Unable to retrieve version information for ${n.name} network.`);
     });
