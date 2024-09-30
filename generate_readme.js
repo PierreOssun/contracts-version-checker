@@ -65,7 +65,7 @@ To run the CI and update the contract versions:
 1. Go to the "Actions" tab in the GitHub repository.
 2. Click on the "Refresh Version" workflow.
 3. Click the "Run workflow" button.
-4. Select the branch you want to run the workflow on (usually 'main' or 'master').
+4. Select the branch.
 5. Click "Run workflow" to start the process.
 
 The workflow will create a new pull request with the updated contract versions and README.md file.
