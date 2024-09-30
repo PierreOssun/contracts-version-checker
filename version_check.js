@@ -115,7 +115,6 @@ async function checkAllVersions() {
 
 async function main() {
   await checkAllVersions();
-  require('./generate_readme');
 }
 
 main();
