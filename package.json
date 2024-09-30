@@ -14,3 +14,17 @@
     "ethers": "^6.13.2"
   }
 }
+{
+  "name": "contract-version-checker",
+  "version": "1.0.0",
+  "description": "Check and update contract versions",
+  "main": "version_check.js",
+  "scripts": {
+    "check": "node version_check.js",
+    "generate": "node generate_readme.js"
+  },
+  "dependencies": {
+    "ethers": "^6.0.0",
+    "dotenv": "^16.0.0"
+  }
+}
