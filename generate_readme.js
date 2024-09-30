@@ -9,23 +9,33 @@ function getLatestJsonFile() {
     return files[0];
 }
 
-function generateReadmeTable(data) {
-    const networks = Object.keys(Object.values(data.contracts)[0]);
-    let table = '| Contract | ' + networks.join(' | ') + ' |\n';
-    table += '|' + '-|'.repeat(networks.length + 1) + '\n';
+function generateReadmeTables(data) {
+    const ethereumNetworks = ['BaseMainnet', 'OpMainnet'];
+    const sepoliaNetworks = ['OsakiSepolia', 'MinatoSepolia', 'BaseSepolia', 'OpSepolia'];
 
-    for (const [contract, versions] of Object.entries(data.contracts)) {
-        table += `| ${contract} | `;
-        for (const network of networks) {
-            table += `${versions[network]?.version || 'N/A'} | `;
+    function createTable(networks, title) {
+        let table = `### ${title}\n\n`;
+        table += '| Contract | ' + networks.join(' | ') + ' |\n';
+        table += '|' + '-|'.repeat(networks.length + 1) + '\n';
+
+        for (const [contract, versions] of Object.entries(data.contracts)) {
+            table += `| ${contract} | `;
+            for (const network of networks) {
+                table += `${versions[network]?.version || 'N/A'} | `;
+            }
+            table = table.trim() + '\n';
         }
-        table = table.trim() + '\n';
+
+        return table;
     }
 
-    return table;
+    const ethereumTable = createTable(ethereumNetworks, 'Ethereum Networks');
+    const sepoliaTable = createTable(sepoliaNetworks, 'Sepolia Networks');
+
+    return ethereumTable + '\n' + sepoliaTable;
 }
 
-function updateReadme(table) {
+function updateReadme(tables) {
     const readmePath = 'README.md';
     let content = '';
 
@@ -39,9 +49,9 @@ function updateReadme(table) {
     if (content.includes(tableMarker) && content.includes(tableEndMarker)) {
         const beforeTable = content.split(tableMarker)[0];
         const afterTable = content.split(tableEndMarker)[1];
-        content = `${beforeTable}${tableMarker}\n\n${table}\n${tableEndMarker}${afterTable}`;
+        content = `${beforeTable}${tableMarker}\n\n${tables}\n${tableEndMarker}${afterTable}`;
     } else {
-        content += `\n\n## Contract Versions\n\n${tableMarker}\n\n${table}\n${tableEndMarker}\n`;
+        content += `\n\n## Contract Versions\n\n${tableMarker}\n\n${tables}\n${tableEndMarker}\n`;
     }
 
     fs.writeFileSync(readmePath, content);
@@ -56,8 +66,8 @@ function main() {
     }
 
     const data = JSON.parse(fs.readFileSync(latestFile, 'utf8'));
-    const table = generateReadmeTable(data);
-    updateReadme(table);
+    const tables = generateReadmeTables(data);
+    updateReadme(tables);
 }
 
 main();
