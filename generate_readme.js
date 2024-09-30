@@ -43,15 +43,13 @@ function updateReadme(tables) {
         content = fs.readFileSync(readmePath, 'utf8');
     }
 
-    const tableMarker = '<!-- CONTRACT_VERSIONS_TABLE -->';
-    const tableEndMarker = '<!-- END_CONTRACT_VERSIONS_TABLE -->';
+    const contractVersionsHeader = '## Contract Versions';
 
-    if (content.includes(tableMarker) && content.includes(tableEndMarker)) {
-        const beforeTable = content.split(tableMarker)[0];
-        const afterTable = content.split(tableEndMarker)[1];
-        content = `${beforeTable}${tableMarker}\n\n${tables}\n${tableEndMarker}${afterTable}`;
+    if (content.includes(contractVersionsHeader)) {
+        const [beforeTable, afterTable] = content.split(contractVersionsHeader);
+        content = `${beforeTable}${contractVersionsHeader}\n\n${tables}\n`;
     } else {
-        content += `\n\n## Contract Versions\n\n${tableMarker}\n\n${tables}\n${tableEndMarker}\n`;
+        content += `\n\n${contractVersionsHeader}\n\n${tables}\n`;
     }
 
     fs.writeFileSync(readmePath, content);
