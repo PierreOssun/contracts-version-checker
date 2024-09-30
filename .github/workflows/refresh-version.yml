@@ -28,7 +28,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'chore: Update contract versions and README'
-          title: 'Update contract versions and README'
+          title: 'chore: Update contract versions and README'
           body: |
             This PR updates the contract versions JSON file and the README.md with the latest contract versions.
           branch: update-contract-versions
