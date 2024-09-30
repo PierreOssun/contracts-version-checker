@@ -21,7 +21,16 @@ function generateReadmeTables(data) {
         for (const [contract, versions] of Object.entries(data.contracts)) {
             table += `| ${contract} | `;
             for (const network of networks) {
-                table += `${versions[network]?.version || 'N/A'} | `;
+                const version = versions[network]?.version || 'N/A';
+                const address = versions[network]?.address;
+                if (version !== 'N/A' && address) {
+                    const baseUrl = versions[network].network === 'ethereum' 
+                        ? 'https://etherscan.io/address/' 
+                        : 'https://sepolia.etherscan.io/address/';
+                    table += `[${version}](${baseUrl}${address}) | `;
+                } else {
+                    table += `${version} | `;
+                }
             }
             table = table.trim() + '\n';
         }
