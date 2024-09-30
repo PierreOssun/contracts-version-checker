@@ -24,6 +24,9 @@ jobs:
           echo "SEPOLIA_RPC_URL=${{ secrets.SEPOLIA_RPC_URL }}" >> .env
 
       - name: Run version check and update README
+        env:
+          ETHEREUM_RPC_URL: ${{ secrets.ETHEREUM_RPC_URL }}
+          SEPOLIA_RPC_URL: ${{ secrets.SEPOLIA_RPC_URL }}
         run: |
           node version_check.js
           node generate_readme.js

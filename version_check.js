@@ -86,9 +86,13 @@ async function checkAllVersions() {
   const networksResult = {};
 
   for (const network of networks) {
-    const networkResult = await checkNetworkVersions(network.name, network.file, network.type);
-    if (networkResult) {
-      networksResult[network.name] = networkResult;
+    if (fs.existsSync(network.file)) {
+      const networkResult = await checkNetworkVersions(network.name, network.file, network.type);
+      if (networkResult) {
+        networksResult[network.name] = networkResult;
+      }
+    } else {
+      console.warn(`Warning: ${network.file} does not exist. Skipping ${network.name}.`);
     }
   }
 
