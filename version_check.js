@@ -2,9 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const { ethers } = require('ethers');
 const dotenv = require('dotenv');
+const path = require('path');
 
 // Load environment variables
-dotenv.config();
+dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
 function fileExists(filePath) {
   return fs.existsSync(filePath);
