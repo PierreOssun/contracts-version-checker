@@ -9,7 +9,7 @@ function getLatestJsonFile() {
 }
 
 function generateReadmeTables(data) {
-    const ethereumNetworks = ['BaseMainnet', 'OPMainnet'];
+    const ethereumNetworks = ['BaseMainnet', 'OpMainnet'];
     const sepoliaNetworks = ['OsakiSepolia', 'MinatoSepolia', 'BaseSepolia', 'OpSepolia'];
 
     function createTable(networks, title) {
