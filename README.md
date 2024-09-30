@@ -19,27 +19,39 @@ The workflow will create a new pull request with the updated contract versions a
 
 ### Ethereum Networks
 
-Last updated: Mon, 30 Sep 2024 17:47:12 GMT
+Last updated: Mon, 30 Sep 2024 17:51:40 GMT
 
 | Contract | BaseMainnet | OpMainnet |
 |-|-|-|
-| SystemConfigProxy | [1.12.0](https://etherscan.io/address/0x73a79Fab69143498Ed3712e519A88a918e1f4072) | N/A |
+| SystemConfigProxy | [1.12.0](https://etherscan.io/address/0x73a79Fab69143498Ed3712e519A88a918e1f4072) | [2.2.0](https://etherscan.io/address/0x229047fed2591dbec1eF1118d64F7aF3dB9EB290) |
 | SuperchainConfigProxy | N/A | N/A |
 | AddressManager | N/A | N/A |
-| L1CrossDomainMessengerProxy | [2.3.0](https://etherscan.io/address/0x866E82a600A1414e583f7F13623F1aC5d58b0Afa) | N/A |
-| L1ERC721BridgeProxy | [2.1.0](https://etherscan.io/address/0x608d94945A64503E642E6370Ec598e519a2C1E53) | N/A |
-| L1StandardBridgeProxy | [2.1.0](https://etherscan.io/address/0x3154Cf16ccdb4C6d922629664174b904d80F2C35) | N/A |
+| L1CrossDomainMessengerProxy | [2.3.0](https://etherscan.io/address/0x866E82a600A1414e583f7F13623F1aC5d58b0Afa) | [2.3.0](https://etherscan.io/address/0x25ace71c97B33Cc4729CF772ae268934F7ab5fA1) |
+| L1ERC721BridgeProxy | [2.1.0](https://etherscan.io/address/0x608d94945A64503E642E6370Ec598e519a2C1E53) | [2.1.0](https://etherscan.io/address/0x5a7749f83b81B301cAb5f48EB8516B986DAef23D) |
+| L1StandardBridgeProxy | [2.1.0](https://etherscan.io/address/0x3154Cf16ccdb4C6d922629664174b904d80F2C35) | [2.1.0](https://etherscan.io/address/0x99C9fc46f92E8a1c0deC1b1747d010903E884bE1) |
 | L2OutputOracleProxy | [1.8.0](https://etherscan.io/address/0x56315b90c40730925ec5485cf004d835058518A0) | N/A |
-| OptimismMintableERC20FactoryProxy | [1.9.0](https://etherscan.io/address/0x05cc379EBD9B30BbA19C6fA282AB29218EC61D84) | N/A |
-| OptimismPortalProxy | [2.5.0](https://etherscan.io/address/0x49048044D57e1C92A77f79988d21Fa8fAF74E97e) | N/A |
+| OptimismMintableERC20FactoryProxy | [1.9.0](https://etherscan.io/address/0x05cc379EBD9B30BbA19C6fA282AB29218EC61D84) | [1.9.0](https://etherscan.io/address/0x75505a97BD334E7BD3C476893285569C4136Fa0F) |
+| OptimismPortalProxy | [2.5.0](https://etherscan.io/address/0x49048044D57e1C92A77f79988d21Fa8fAF74E97e) | [3.10.0](https://etherscan.io/address/0xbEb5Fc579115071764c7423A4f12eDde41f106Ed) |
 | ProxyAdmin | N/A | N/A |
 | SystemDictator | N/A | N/A |
+| SuperchainConfig | N/A | [1.1.0](https://etherscan.io/address/0x95703e0982140D16f8ebA6d158FccEde42f04a4C) |
+| AnchorStateRegistryProxy | N/A | [2.0.0](https://etherscan.io/address/0x18DAc71c228D1C32c99489B7323d441E1175e443) |
+| BatchSubmitter | N/A | N/A |
+| Challenger | N/A | N/A |
+| DelayedWETHProxy | N/A | [1.1.0](https://etherscan.io/address/0x82511d494B5C942BE57498a70Fdd7184Ee33B975) |
+| DisputeGameFactoryProxy | N/A | [1.0.0](https://etherscan.io/address/0xe5965Ab5962eDc7477C8520243A95517CD252fA9) |
+| FaultDisputeGame | N/A | [1.3.0](https://etherscan.io/address/0xA6f3DFdbf4855a43c529bc42EDE96797252879af) |
+| Guardian | N/A | N/A |
+| MIPS | N/A | [1.1.0](https://etherscan.io/address/0x16e83cE5Ce29BF90AD9Da06D2fE6a15d5f344ce4) |
+| PermissionedDisputeGame | N/A | [1.3.0](https://etherscan.io/address/0x050ed6F6273c7D836a111E42153BC00D0380b87d) |
+| PreimageOracle | N/A | [1.1.2](https://etherscan.io/address/0x9c065e11870B891D214Bc2Da7EF1f9DDFA1BE277) |
+| Proposer | N/A | N/A |
+| ProxyAdminOwner | N/A | N/A |
+| SystemConfigOwner | N/A | N/A |
+| UnsafeBlockSigner | N/A | N/A |
 | AnchorStateRegistry | N/A | N/A |
-| AnchorStateRegistryProxy | N/A | N/A |
 | DelayedWETH | N/A | N/A |
-| DelayedWETHProxy | N/A | N/A |
 | DisputeGameFactory | N/A | N/A |
-| DisputeGameFactoryProxy | N/A | N/A |
 | L1CrossDomainMessenger | N/A | N/A |
 | L1ERC721Bridge | N/A | N/A |
 | L1StandardBridge | N/A | N/A |
@@ -48,28 +60,16 @@ Last updated: Mon, 30 Sep 2024 17:47:12 GMT
 | OptimismMintableERC20Factory | N/A | N/A |
 | OptimismPortal | N/A | N/A |
 | OptimismPortal2 | N/A | N/A |
-| PreimageOracle | N/A | N/A |
 | ProtocolVersions | N/A | N/A |
 | ProtocolVersionsProxy | N/A | N/A |
 | SafeProxyFactory | N/A | N/A |
 | SafeSingleton | N/A | N/A |
-| SuperchainConfig | N/A | N/A |
 | SystemConfig | N/A | N/A |
 | SystemOwnerSafe | N/A | N/A |
-| FaultDisputeGame | N/A | N/A |
-| PermissionedDisputeGame | N/A | N/A |
-| BatchSubmitter | N/A | N/A |
-| Challenger | N/A | N/A |
-| Guardian | N/A | N/A |
-| MIPS | N/A | N/A |
-| Proposer | N/A | N/A |
-| ProxyAdminOwner | N/A | N/A |
-| SystemConfigOwner | N/A | N/A |
-| UnsafeBlockSigner | N/A | N/A |
 
 ### Sepolia Networks
 
-Last updated: Mon, 30 Sep 2024 17:47:12 GMT
+Last updated: Mon, 30 Sep 2024 17:51:40 GMT
 
 | Contract | OsakiSepolia | MinatoSepolia | BaseSepolia | OpSepolia |
 |-|-|-|-|-|
@@ -84,12 +84,24 @@ Last updated: Mon, 30 Sep 2024 17:47:12 GMT
 | OptimismPortalProxy | [2.8.0](https://sepolia.etherscan.io/address/0x4b77cE16faEfAcfBDCf73F8643B51f290d377A4a) | [2.5.0](https://sepolia.etherscan.io/address/0x65ea1489741A5D72fFdD8e6485B216bBdcC15Af3) | [3.10.0](https://sepolia.etherscan.io/address/0x49f53e41452C74589E85cA1677426Ba426459e85) | [3.10.0](https://sepolia.etherscan.io/address/0x16Fc5058F25648194471939df75CF27A2fdC48BC) |
 | ProxyAdmin | N/A | N/A | N/A | N/A |
 | SystemDictator | N/A | N/A | N/A | N/A |
-| AnchorStateRegistry | [1.0.0](https://sepolia.etherscan.io/address/0x7E60c2994b392FC59771a07963Bcf46EF66EF183) | N/A | N/A | N/A |
+| SuperchainConfig | [1.1.0](https://sepolia.etherscan.io/address/0xa5C066008fA97F39442b6d78F24402Fa179E090f) | [1.1.0](https://sepolia.etherscan.io/address/0x0c12a68a3c8aFF8c3D788B593992039b28724350) | N/A | N/A |
 | AnchorStateRegistryProxy | [1.0.0](https://sepolia.etherscan.io/address/0x24002Bf321A49Efc8104bb545Be5F836B828abB7) | N/A | [2.0.0](https://sepolia.etherscan.io/address/0x4C8BA32A5DAC2A720bb35CeDB51D6B067D104205) | [2.0.0](https://sepolia.etherscan.io/address/0x218CD9489199F321E1177b56385d333c5B598629) |
-| DelayedWETH | [1.0.0](https://sepolia.etherscan.io/address/0x16Cb9647A528b2e43E59b8E4B80Ec0d54C814f71) | N/A | N/A | N/A |
+| BatchSubmitter | N/A | N/A | N/A | N/A |
+| Challenger | N/A | N/A | N/A | N/A |
 | DelayedWETHProxy | [1.0.0](https://sepolia.etherscan.io/address/0xE460f3180C1d5408fe338E5994997e03956Ddf2c) | N/A | [1.0.0](https://sepolia.etherscan.io/address/0x7698b262B7a534912c8366dD8a531672deEC634e) | [1.1.0](https://sepolia.etherscan.io/address/0xcdFdC692a53B4aE9F81E0aEBd26107Da4a71dB84) |
-| DisputeGameFactory | [1.0.0](https://sepolia.etherscan.io/address/0xB9e1330b64A3Bc8124487379bC22341BC8756E50) | [0.0.8](https://sepolia.etherscan.io/address/0xa62A67390910F4e8BcC3bA58f89ef55D411801DA) | N/A | N/A |
 | DisputeGameFactoryProxy | [1.0.0](https://sepolia.etherscan.io/address/0xAB9Bc83A315730bf7f409589cb219DA037D1C4ce) | [0.0.8](https://sepolia.etherscan.io/address/0xF69dB6cA559C52d9A4BB6e2B2901f490Ca35Fbf6) | [1.0.0](https://sepolia.etherscan.io/address/0xd6E6dBf4F7EA0ac412fD8b65ED297e64BB7a06E1) | [1.0.0](https://sepolia.etherscan.io/address/0x05F9613aDB30026FFd634f38e5C4dFd30a197Fa1) |
+| FaultDisputeGame | N/A | N/A | [1.2.0](https://sepolia.etherscan.io/address/0x48F9F3190b7B5231cBf2aD1A1315AF7f6A554020) | [1.3.0](https://sepolia.etherscan.io/address/0xD9d616E4a03a8e7cC962396C9f8D4e3d306097D3) |
+| Guardian | N/A | N/A | N/A | N/A |
+| MIPS | N/A | N/A | N/A | [1.1.0](https://sepolia.etherscan.io/address/0x47B0E34C1054009e696BaBAAd56165e1e994144d) |
+| PermissionedDisputeGame | N/A | N/A | [1.2.0](https://sepolia.etherscan.io/address/0x54966d5A42a812D0dAaDe1FA2321FF8b102d1ee1) | [1.3.0](https://sepolia.etherscan.io/address/0x98E3F752c7224F8322Afa935a4CaEC3832bB25c9) |
+| PreimageOracle | [1.0.0](https://sepolia.etherscan.io/address/0xC6eCc0d05964D7316CC1B85a9efE923ffd59adcC) | N/A | [1.0.0](https://sepolia.etherscan.io/address/0x627F825CBd48c4102d36f287be71f4234426b9e4) | [1.1.2](https://sepolia.etherscan.io/address/0x92240135b46fc1142dA181f550aE8f595B858854) |
+| Proposer | N/A | N/A | N/A | N/A |
+| ProxyAdminOwner | N/A | N/A | N/A | N/A |
+| SystemConfigOwner | N/A | N/A | N/A | N/A |
+| UnsafeBlockSigner | N/A | N/A | N/A | N/A |
+| AnchorStateRegistry | [1.0.0](https://sepolia.etherscan.io/address/0x7E60c2994b392FC59771a07963Bcf46EF66EF183) | N/A | N/A | N/A |
+| DelayedWETH | [1.0.0](https://sepolia.etherscan.io/address/0x16Cb9647A528b2e43E59b8E4B80Ec0d54C814f71) | N/A | N/A | N/A |
+| DisputeGameFactory | [1.0.0](https://sepolia.etherscan.io/address/0xB9e1330b64A3Bc8124487379bC22341BC8756E50) | [0.0.8](https://sepolia.etherscan.io/address/0xa62A67390910F4e8BcC3bA58f89ef55D411801DA) | N/A | N/A |
 | L1CrossDomainMessenger | [2.4.0](https://sepolia.etherscan.io/address/0xAD6EC8F369837EB942986127CeD847BdAc510AF4) | [2.3.0](https://sepolia.etherscan.io/address/0x9Fe59F10082e9AA0d35e5C3208AcD7Ca9637f5B7) | N/A | N/A |
 | L1ERC721Bridge | [2.1.0](https://sepolia.etherscan.io/address/0x6F7dE1FfcFeb6575427f33Cc07d9D59816Fb56a6) | [2.1.0](https://sepolia.etherscan.io/address/0xbe876D11391FB1d0a29A38f159aa35D3eD816a36) | N/A | N/A |
 | L1StandardBridge | [2.2.0](https://sepolia.etherscan.io/address/0x26Eb4195a43a93Db7A9D9AfEb872bd2CE12DF963) | [2.1.0](https://sepolia.etherscan.io/address/0x66F5da4FC56eB7ca96E2B8a9cd0516c3bb71eACf) | N/A | N/A |
@@ -98,22 +110,10 @@ Last updated: Mon, 30 Sep 2024 17:47:12 GMT
 | OptimismMintableERC20Factory | [1.9.0](https://sepolia.etherscan.io/address/0x5D5Ad48e60B95F0c3112FF52fC9Bcd0c4f8eB443) | [1.9.0](https://sepolia.etherscan.io/address/0x3e64A143535e8FD8266b2bd8eBA472D9828a6c75) | N/A | N/A |
 | OptimismPortal | [2.8.0](https://sepolia.etherscan.io/address/0x3db9034DBeFd0e89215490A2d811b47bF29315dC) | [2.5.0](https://sepolia.etherscan.io/address/0x10A436A427bc5FB5DDc059B7FF396F8DCb254c73) | N/A | N/A |
 | OptimismPortal2 | [3.10.0](https://sepolia.etherscan.io/address/0x22d3bcfBC9A948a1F5d8E2b0bB575170c1D73582) | N/A | N/A | N/A |
-| PreimageOracle | [1.0.0](https://sepolia.etherscan.io/address/0xC6eCc0d05964D7316CC1B85a9efE923ffd59adcC) | N/A | [1.0.0](https://sepolia.etherscan.io/address/0x627F825CBd48c4102d36f287be71f4234426b9e4) | [1.1.2](https://sepolia.etherscan.io/address/0x92240135b46fc1142dA181f550aE8f595B858854) |
 | ProtocolVersions | [1.0.0](https://sepolia.etherscan.io/address/0x89A53376B5b42aBD6020Bb1626235dda5c50a5f9) | [1.0.0](https://sepolia.etherscan.io/address/0x874350dB1f447EEe88fa392EfB1511917e392A22) | N/A | N/A |
 | ProtocolVersionsProxy | [1.0.0](https://sepolia.etherscan.io/address/0xb317564bE3988c7C3a5b2205d1f09209ACABCa8B) | [1.0.0](https://sepolia.etherscan.io/address/0x835E207F777BB66675f905671E817B807067154D) | N/A | N/A |
 | SafeProxyFactory | N/A | N/A | N/A | N/A |
 | SafeSingleton | N/A | N/A | N/A | N/A |
-| SuperchainConfig | [1.1.0](https://sepolia.etherscan.io/address/0xa5C066008fA97F39442b6d78F24402Fa179E090f) | [1.1.0](https://sepolia.etherscan.io/address/0x0c12a68a3c8aFF8c3D788B593992039b28724350) | N/A | N/A |
 | SystemConfig | [2.3.0-beta.1](https://sepolia.etherscan.io/address/0xe3aaeAd810b6A98De8EaE35b9747AC80E75A6DAE) | [1.12.0](https://sepolia.etherscan.io/address/0x0919432B1B288d580CBbF3C2600240E2e9fFad6c) | N/A | N/A |
 | SystemOwnerSafe | N/A | N/A | N/A | N/A |
-| FaultDisputeGame | N/A | N/A | [1.2.0](https://sepolia.etherscan.io/address/0x48F9F3190b7B5231cBf2aD1A1315AF7f6A554020) | [1.3.0](https://sepolia.etherscan.io/address/0xD9d616E4a03a8e7cC962396C9f8D4e3d306097D3) |
-| PermissionedDisputeGame | N/A | N/A | [1.2.0](https://sepolia.etherscan.io/address/0x54966d5A42a812D0dAaDe1FA2321FF8b102d1ee1) | [1.3.0](https://sepolia.etherscan.io/address/0x98E3F752c7224F8322Afa935a4CaEC3832bB25c9) |
-| BatchSubmitter | N/A | N/A | N/A | N/A |
-| Challenger | N/A | N/A | N/A | N/A |
-| Guardian | N/A | N/A | N/A | N/A |
-| MIPS | N/A | N/A | N/A | [1.1.0](https://sepolia.etherscan.io/address/0x47B0E34C1054009e696BaBAAd56165e1e994144d) |
-| Proposer | N/A | N/A | N/A | N/A |
-| ProxyAdminOwner | N/A | N/A | N/A | N/A |
-| SystemConfigOwner | N/A | N/A | N/A | N/A |
-| UnsafeBlockSigner | N/A | N/A | N/A | N/A |
 
