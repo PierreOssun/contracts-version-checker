@@ -31,5 +31,7 @@ jobs:
           title: 'chore: Update contract versions and README'
           body: |
             This PR updates the contract versions JSON file and the README.md with the latest contract versions.
+            
+            Please review the changes and merge if everything looks correct.
           branch: update-contract-versions
           delete-branch: true
