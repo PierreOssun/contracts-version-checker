@@ -53,18 +53,37 @@ function updateReadme(tables) {
         content = fs.readFileSync(readmePath, 'utf8');
     }
 
+    const ciInstructions = `
+# Contract Version Checker
+
+This repository contains a GitHub Actions workflow to automatically check and update contract versions.
+
+## Running the CI
+
+To run the CI and update the contract versions:
+
+1. Go to the "Actions" tab in the GitHub repository.
+2. Click on the "Refresh Version" workflow.
+3. Click the "Run workflow" button.
+4. Select the branch you want to run the workflow on (usually 'main' or 'master').
+5. Click "Run workflow" to start the process.
+
+The workflow will create a new pull request with the updated contract versions and README.md file.
+
+`;
+
     const contractVersionsHeader = '## Contract Versions';
 
     if (content.includes(contractVersionsHeader)) {
         const [beforeTable, afterTable] = content.split(contractVersionsHeader);
         const afterTableContent = afterTable.split('\n\n').slice(1).join('\n\n');
-        content = `${beforeTable}${contractVersionsHeader}\n\n${tables}\n${afterTableContent}`;
+        content = `${ciInstructions}${contractVersionsHeader}\n\n${tables}\n${afterTableContent}`;
     } else {
-        content += `\n\n${contractVersionsHeader}\n\n${tables}\n`;
+        content = `${ciInstructions}${contractVersionsHeader}\n\n${tables}\n${content}`;
     }
 
     fs.writeFileSync(readmePath, content);
-    console.log('README.md has been updated with the latest contract versions and timestamp.');
+    console.log('README.md has been updated with CI instructions, latest contract versions, and timestamp.');
 }
 
 function main() {
