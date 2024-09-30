@@ -15,6 +15,7 @@ function generateReadmeTables(data) {
 
     function createTable(networks, title) {
         let table = `### ${title}\n\n`;
+        table += `Last updated: ${new Date().toUTCString()}\n\n`;
         table += '| Contract | ' + networks.join(' | ') + ' |\n';
         table += '|' + '-|'.repeat(networks.length + 1) + '\n';
 
@@ -56,13 +57,14 @@ function updateReadme(tables) {
 
     if (content.includes(contractVersionsHeader)) {
         const [beforeTable, afterTable] = content.split(contractVersionsHeader);
-        content = `${beforeTable}${contractVersionsHeader}\n\n${tables}\n`;
+        const afterTableContent = afterTable.split('\n\n').slice(1).join('\n\n');
+        content = `${beforeTable}${contractVersionsHeader}\n\n${tables}\n${afterTableContent}`;
     } else {
         content += `\n\n${contractVersionsHeader}\n\n${tables}\n`;
     }
 
     fs.writeFileSync(readmePath, content);
-    console.log('README.md has been updated with the latest contract versions.');
+    console.log('README.md has been updated with the latest contract versions and timestamp.');
 }
 
 function main() {
