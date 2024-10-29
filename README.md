@@ -19,7 +19,7 @@ The workflow will create a new pull request with the updated contract versions a
 
 ### Ethereum Networks
 
-Last updated: Mon, 30 Sep 2024 17:51:40 GMT
+Last updated: Tue, 29 Oct 2024 10:29:11 GMT
 
 | Contract | BaseMainnet | OpMainnet |
 |-|-|-|
@@ -69,7 +69,7 @@ Last updated: Mon, 30 Sep 2024 17:51:40 GMT
 
 ### Sepolia Networks
 
-Last updated: Mon, 30 Sep 2024 17:51:40 GMT
+Last updated: Tue, 29 Oct 2024 10:29:11 GMT
 
 | Contract | OsakiSepolia | MinatoSepolia | BaseSepolia | OpSepolia |
 |-|-|-|-|-|
